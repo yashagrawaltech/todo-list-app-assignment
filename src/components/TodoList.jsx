@@ -77,9 +77,10 @@ const TodoList = () => {
     };
 
     useEffect(() => {
-        if (todos.length) {
-            localStorage.setItem("todos", JSON.stringify(todos));
-        }
+        localStorage.setItem(
+            "todos",
+            JSON.stringify(todos.length ? todos : [])
+        );
     }, [todos]);
 
     return (
