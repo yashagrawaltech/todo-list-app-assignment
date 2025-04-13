@@ -1,7 +1,7 @@
 # 📝 To-Do List Application Assignment
 
-- Github Link: 
-- Live: 
+- Github Link: https://github.com/yashagrawaltech/todo-list-app-assignment/tree/main
+- Live: https://todo-list-app-assignment.netlify.app/
 
 - steps to run the application in local machine: 
     1. **Clone the repository**
@@ -70,5 +70,5 @@ Implement the following: ✅
 ---
 
 ## 📤 Submission (10 marks)
-- Submit the **link to your GitHub repository** containing the project. *(5 marks)*
+- Submit the **link to your GitHub repository** containing the project. *(5 marks)* ✅
 - Ensure the **README** file includes instructions on how to run the application. *(5 marks)* ✅
