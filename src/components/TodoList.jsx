@@ -31,7 +31,9 @@ const TodoList = () => {
 
     useLayoutEffect(() => {
         const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-        setTodos(savedTodos);
+        if (savedTodos.length) {
+            setTodos(savedTodos);
+        }
     }, []);
 
     const deleteTodo = (id) => {
@@ -86,7 +88,7 @@ const TodoList = () => {
     return (
         <div className="w-full md:w-[80%] overflow-clip">
             <form
-                className="w-full flex items-center justify-center gap-4 bg-gray-200 pt-4 pb-4 px-4 sticky top-0"
+                className="w-full flex flex-col md:flex-row items-center justify-center gap-4 bg-gray-200 pt-4 pb-4 px-4 sticky top-0"
                 onSubmit={addTodo}
             >
                 <input
@@ -98,7 +100,7 @@ const TodoList = () => {
                     placeholder="want to learn react.js today"
                 />
                 <button
-                    className="px-4 h-16 bg-gray-900 text-white rounded-md flex items-center justify-center gap-2 text-nowrap"
+                    className="px-4 h-16 w-full md:w-fit bg-gray-900 text-white rounded-md flex items-center justify-center gap-2 text-nowrap"
                     type="submit"
                 >
                     <svg

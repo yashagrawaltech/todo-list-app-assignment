@@ -11,7 +11,7 @@ const TodoItem = memo(
         };
 
         return (
-            <div className="text-gray-950 bg-gray-300 border-2 w-full h-16 px-4 flex items-center rounded-md gap-2">
+            <div className="text-gray-950 bg-gray-300 border-2 w-full py-4 md:py-0 md:h-16 px-4 flex flex-col md:flex-row items-center rounded-md gap-2">
                 <input
                     disabled={!isEditable}
                     value={newText}
@@ -22,7 +22,7 @@ const TodoItem = memo(
                 />
                 {isEditable ? (
                     <div
-                        className="p-2 bg-blue-400 rounded-full"
+                        className="p-2 bg-blue-400 rounded-full w-fit h-fit"
                         onClick={() => {
                             editTodo(todo.id, newText);
                             setIsEditable(false);
@@ -38,10 +38,10 @@ const TodoItem = memo(
                         </svg>
                     </div>
                 ) : (
-                    <>
+                    <div className="flex items-center ml-auto">
                         {todo.isDone ? (
                             <div
-                                className="p-2 mr-2 bg-gray-400 rounded-full"
+                                className="p-2 mr-2 bg-gray-400 rounded-full w-fit h-fit"
                                 onClick={() => makeNotDone(todo.id)}
                             >
                                 <svg
@@ -55,7 +55,7 @@ const TodoItem = memo(
                             </div>
                         ) : (
                             <div
-                                className="p-2 mr-2 bg-green-400 rounded-full"
+                                className="p-2 mr-2 bg-green-400 rounded-full w-fit h-fit"
                                 onClick={() => makeDone(todo.id)}
                             >
                                 <svg
@@ -71,7 +71,7 @@ const TodoItem = memo(
 
                         {!todo.isDone && (
                             <div
-                                className="p-2 mr-2 bg-yellow-400 rounded-full"
+                                className="p-2 mr-2 bg-yellow-400 rounded-full w-fit h-fit"
                                 onClick={() => setIsEditable(true)}
                             >
                                 <svg
@@ -86,7 +86,7 @@ const TodoItem = memo(
                         )}
 
                         <div
-                            className="p-2 bg-red-400 rounded-full"
+                            className="p-2 bg-red-400 rounded-full w-fit h-fit"
                             onClick={() => deleteTodo(todo.id)}
                         >
                             <svg
@@ -98,7 +98,7 @@ const TodoItem = memo(
                                 <path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path>
                             </svg>
                         </div>
-                    </>
+                    </div>
                 )}
             </div>
         );
